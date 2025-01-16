@@ -29,3 +29,12 @@ function generateSquares (squareSize, totalSquares) {
 
 let generatedSquares = generateSquares(squareSize, totalSquares);
 console.log(generatedSquares);
+
+function fillCanvas (squares){
+  const canvas = document.querySelector('.container');
+  squares.forEach((square) => {
+    canvas.appendChild(square);
+  });
+}
+
+fillCanvas(generatedSquares);
