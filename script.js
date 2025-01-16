@@ -3,4 +3,12 @@ function computeSquareSize (squaresPerSide) {
   return canvasSize / squaresPerSide;
 }
 
-console.log(computeSquareSize(37));
+let squareSize = computeSquareSize(39);
+console.log(squareSize);
+
+function calculateSquareAmount (squaresPerSide) {
+  return squaresPerSide * squaresPerSide;
+}
+
+let numberOfSquares = calculateSquareAmount(39);
+console.log(numberOfSquares);
