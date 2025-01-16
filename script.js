@@ -19,8 +19,8 @@ function generateSquares (squareSize, totalSquares) {
 
   for(let i = 0; i <= totalSquares; i++) {
     const square = document.createElement('div');
-    square.style.width = squareSize;
-    square.style.height = squareSize;
+    square.style.width = `${squareSize}px`;
+    square.style.height = `${squareSize}px`;
     square.classList.add('square');
     squares.push(square);
   }
