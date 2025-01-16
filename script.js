@@ -10,5 +10,5 @@ function calculateSquareAmount (squaresPerSide) {
   return squaresPerSide * squaresPerSide;
 }
 
-let numberOfSquares = calculateSquareAmount(39);
-console.log(numberOfSquares);
+let totalSquares = calculateSquareAmount(39);
+console.log(totalSquares);
