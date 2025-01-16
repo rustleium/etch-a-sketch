@@ -41,8 +41,9 @@ function fillCanvas (squares){
 
 function startEtching() {
 
-  let squareSize = computeSquareSize(13);
-  let totalSquares = calculateSquareAmount(13);
+  const squaresPerSide = parseInt(prompt("Type grid squares per side"));
+  let squareSize = computeSquareSize(squaresPerSide);
+  let totalSquares = calculateSquareAmount(squaresPerSide);
   let generatedSquares = generateSquares(squareSize, totalSquares);
   fillCanvas(generatedSquares);
 
