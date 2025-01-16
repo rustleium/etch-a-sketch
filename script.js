@@ -42,11 +42,14 @@ function fillCanvas (squares){
 function startEtching() {
 
   const squaresPerSide = parseInt(prompt("Type grid squares per side"));
-  let squareSize = computeSquareSize(squaresPerSide);
-  let totalSquares = calculateSquareAmount(squaresPerSide);
-  let generatedSquares = generateSquares(squareSize, totalSquares);
-  fillCanvas(generatedSquares);
-
+  if(!squaresPerSide || squaresPerSide > 100){
+    squaresPerSide = prompt("Enter a whole number within 100")
+  }else{
+    let squareSize = computeSquareSize(squaresPerSide);
+    let totalSquares = calculateSquareAmount(squaresPerSide);
+    let generatedSquares = generateSquares(squareSize, totalSquares);
+    fillCanvas(generatedSquares);
+  }
 }
 
 startEtching();
