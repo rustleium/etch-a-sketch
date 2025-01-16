@@ -3,15 +3,15 @@ function computeSquareSize (squaresPerSide) {
   return canvasSize / squaresPerSide;
 }
 
-let squareSize = computeSquareSize(39);
-console.log(squareSize);
+// let squareSize = computeSquareSize(39);
+// console.log(squareSize);
 
 function calculateSquareAmount (squaresPerSide) {
   return squaresPerSide * squaresPerSide;
 }
 
-let totalSquares = calculateSquareAmount(39);
-console.log(totalSquares);
+// let totalSquares = calculateSquareAmount(39);
+// console.log(totalSquares);
 
 function generateSquares (squareSize, totalSquares) {
   
@@ -27,8 +27,8 @@ function generateSquares (squareSize, totalSquares) {
   return squares;
 }
 
-let generatedSquares = generateSquares(squareSize, totalSquares);
-console.log(generatedSquares);
+// let generatedSquares = generateSquares(squareSize, totalSquares);
+// console.log(generatedSquares);
 
 function fillCanvas (squares){
   const canvas = document.querySelector('.container');
@@ -37,4 +37,15 @@ function fillCanvas (squares){
   });
 }
 
-fillCanvas(generatedSquares);
+// fillCanvas(generatedSquares);
+
+function startEtching() {
+
+  let squareSize = computeSquareSize(13);
+  let totalSquares = calculateSquareAmount(13);
+  let generatedSquares = generateSquares(squareSize, totalSquares);
+  fillCanvas(generatedSquares);
+
+}
+
+startEtching();
