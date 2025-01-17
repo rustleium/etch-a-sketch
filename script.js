@@ -56,7 +56,7 @@ function addColours () {
   const canvas = document.querySelector('.container');
   canvas.addEventListener('mouseover', (eventObj) => {
     if(eventObj.target.classList.contains('square')) {
-      eventObj.target.style.backgroundColor = 'red';
+      eventObj.target.classList.add('coloured');
     }
   });
 }
