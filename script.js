@@ -69,6 +69,12 @@ function addColours () {
       eventObj.target.classList.add('coloured');
     }
   });
+
+  canvas.addEventListener('click', (eventObj) => {
+    if(eventObj.target.classList.contains('square')) {
+      eventObj.target.classList.add('coloured');
+    }
+  });
 }
 
 startEtching();
