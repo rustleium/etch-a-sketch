@@ -54,11 +54,15 @@ function startEtching() {
 
 function addColours () {
   const canvas = document.querySelector('.container');
-  canvas.addEventListener('mouseover', (eventObj) => {
-    if(eventObj.target.classList.contains('square')) {
-      eventObj.target.classList.add('coloured');
-    }
+  let isMouseDown = false;
+
+  canvas.addEventListener('mousedown', () => {
+    isMouseDown = true;
   });
+
+  canvas.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  })
 }
 
 startEtching();
