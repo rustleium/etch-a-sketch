@@ -62,7 +62,13 @@ function addColours () {
 
   canvas.addEventListener('mouseup', () => {
     isMouseDown = false;
-  })
+  });
+
+  canvas.addEventListener('mousemove', (evenObj) => {
+    if(isMouseDown && evenObj.target.classList.contains('square')) {
+      evenObj.target.classList.add('coloured');
+    }
+  });
 }
 
 startEtching();
