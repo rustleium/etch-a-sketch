@@ -49,7 +49,16 @@ function startEtching() {
     let totalSquares = calculateSquareAmount(squaresPerSide);
     let generatedSquares = generateSquares(squareSize, totalSquares);
     fillCanvas(generatedSquares);
+    addColours();
 }
 
+function addColours () {
+  const canvas = document.querySelector('.container');
+  canvas.addEventListener('mouseover', (eventObj) => {
+    if(eventObj.target.classList.contains('square')) {
+      eventObj.target.style.backgroundColor = 'red';
+    }
+  });
+}
 
 startEtching();
