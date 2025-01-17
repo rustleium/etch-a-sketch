@@ -64,9 +64,9 @@ function addColours () {
     isMouseDown = false;
   });
 
-  canvas.addEventListener('mousemove', (evenObj) => {
-    if(isMouseDown && evenObj.target.classList.contains('square')) {
-      evenObj.target.classList.add('coloured');
+  canvas.addEventListener('mousemove', (eventObj) => {
+    if(isMouseDown && eventObj.target.classList.contains('square')) {
+      eventObj.target.classList.add('coloured');
     }
   });
 }
