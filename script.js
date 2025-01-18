@@ -64,7 +64,7 @@ function addColours () {
     isMouseDown = false;
   });
 
-  canvas.addEventListener('mousemove', (eventObj) => {
+  canvas.addEventListener('mouseover', (eventObj) => {
     if(isMouseDown && eventObj.target.classList.contains('square')) {
       eventObj.target.classList.add('coloured');
     }
