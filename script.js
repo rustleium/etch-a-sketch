@@ -50,6 +50,7 @@ function startEtching() {
     let generatedSquares = generateSquares(squareSize, totalSquares);
     fillCanvas(generatedSquares);
     addColours();
+    increaseOpacity();
 }
 
 function addColours () {
@@ -73,6 +74,37 @@ function addColours () {
   canvas.addEventListener('click', (eventObj) => {
     if(eventObj.target.classList.contains('square')) {
       eventObj.target.classList.add('coloured');
+    }
+  });
+}
+
+function increaseOpacity () {
+  const canvas = document.querySelector('.container');
+  let isMouseDown = false;
+
+  canvas.addEventListener('mousedown', () => {
+    isMouseDown = true;
+  });
+
+  canvas.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  canvas.addEventListener('mouseover', (eventObj) => {
+    if(isMouseDown && eventObj.target.classList.contains('square')) {
+      let currentOpacity = parseFloat(getComputedStyle(eventObj.target).opacity);
+      if(currentOpacity < 1) {
+        eventObj.target.style.opacity = currentOpacity + 0.1;
+      }
+    }
+  });
+
+  canvas.addEventListener('click', (eventObj) => {
+    if(eventObj.target.classList.contains('square')) {
+      let currentOpacity = parseFloat(getComputedStyle(eventObj.target).opacity);
+      if(currentOpacity < 1) {
+        eventObj.target.style.opacity = currentOpacity + 0.1;
+      }
     }
   });
 }
