@@ -51,6 +51,7 @@ function startEtching() {
     fillCanvas(generatedSquares);
     addColours();
     increaseOpacity();
+    randomizeColours();
 }
 
 function addColours () {
@@ -114,6 +115,31 @@ function getRandomRGB() {
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
+}
+
+function randomizeColours() {
+  const canvas = document.querySelector('.container');
+  let isMouseDown = false;
+
+  canvas.addEventListener('mousedown', () => {
+    isMouseDown = true;
+  });
+
+  canvas.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  canvas.addEventListener('mouseover', (eventObj) => {
+    if(isMouseDown && eventObj.target.classList.contains('square')) {
+      eventObj.target.style.backgroundColor = getRandomRGB();
+    }
+  });
+
+  canvas.addEventListener('click', (eventObj) => {
+    if(eventObj.target.classList.contains('square')) {
+      eventObj.target.style.backgroundColor = getRandomRGB();
+    }
+  });
 }
 
 startEtching();
